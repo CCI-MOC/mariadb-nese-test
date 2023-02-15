@@ -8,40 +8,28 @@ services:
     volumes:
       - '../mariadb-local:/var/lib/mysql'
     environment:
-      - ALLOW_EMPTY_PASSWORD=yes
-      - MARIADB_DATABASE=test
       - MARIADB_PORT_NUMBER=3306
       - MARIADB_ROOT_USER=root
       - MARIADB_ROOT_PASSWORD=root
-      - MARIADB_USER=nesetest
-      - MARIADB_PASSWORD=nesetest
   mariadb-replicated:
     image: 'mariadb:latest'
     container_name: 'mariadb-replicated'
     ports:
-      - '3307:3306'
+      - '3316:3306'
     volumes:
       - '../mariadb-replicated:/var/lib/mysql'
     environment:
-      - ALLOW_EMPTY_PASSWORD=yes
-      - MARIADB_DATABASE=test
       - MARIADB_PORT_NUMBER=3306
       - MARIADB_ROOT_USER=root
       - MARIADB_ROOT_PASSWORD=root
-      - MARIADB_USER=nesetest
-      - MARIADB_PASSWORD=nesetest
   mariadb-erasure:
     image: 'mariadb:latest'
     container_name: 'mariadb-erasure'
     ports:
-      - '3308:3306'
+      - '3326:3306'
     volumes:
       - '../mariadb-erasure:/var/lib/mysql'
     environment:
-      - ALLOW_EMPTY_PASSWORD=yes
-      - MARIADB_DATABASE=test
       - MARIADB_PORT_NUMBER=3306
       - MARIADB_ROOT_USER=root
       - MARIADB_ROOT_PASSWORD=root
-      - MARIADB_USER=nesetest
-      - MARIADB_PASSWORD=nesetest
